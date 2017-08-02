@@ -1,0 +1,19 @@
+{
+  "name": "event_manager",
+  "version": "0.1.0",
+  "description": "social events manager",
+  "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elenamorton/events_manager_js.git"
+  },
+  "author": "Elena Morton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elenamorton/events_manager_js/issues"
+  },
+  "homepage": "https://github.com/elenamorton/events_manager_js#readme"
+}
