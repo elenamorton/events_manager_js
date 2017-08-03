@@ -2,7 +2,7 @@ const chai = require('chai')
 const expect = chai.expect
 
 //Importing our places model for the unit test
-const Place = require('../src/place')
+const Place = require('../app/models/place')
 
 describe('Place', () => {
     
