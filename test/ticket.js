@@ -4,7 +4,7 @@ const expect = chai.expect;
 //Importing our places model for the unit test
 const Ticket = require('../app/models/ticket');
 let ticket = new Ticket(20, 5);
-let ticketA = new Ticket(1, 25, "GBP");
+let ticketA = new Ticket(2, 25, "GBP");
 
 describe('Ticket', () => {
     
@@ -25,5 +25,18 @@ describe('Ticket', () => {
             expect(ticketA.currency).to.equal("GBP");
         });
         
+        it('sells less tickets than available', () => {
+            expect(ticket.sellTicket(5)).to.equal(15);
+        });
+        
+        it('number of tickets must be minimum 0', () => {
+            expect(ticket.sellTicket(15)).to.equal(0);
+        });
+    });
+    
+    describe('user exceptions', () => {
+        it('sells more tickets than available', () => {
+            expect(ticketA.sellTicket(3)).to.throw('Only 2 tickets are available');
+        });
     });
 })
