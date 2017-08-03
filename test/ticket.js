@@ -7,9 +7,9 @@ let ticket = new Ticket(20, 5);
 
 describe('Ticket', () => {
     
-        describe('ticket has a price', () => {
-        it('get the ticket price', () => {
-            expect(ticket.price).to.equal(5);
+    describe('ticket has', () => {
+        it('get the number of tickets', () => {
+            expect(ticket.quantity).to.equal(20);
         });
     });
 })
