@@ -4,8 +4,11 @@ const expect = chai.expect;
 //Importing our places model for the unit test
 const Point = require('../app/models/point');
 let point = new Point(4, 2);
+let pointA = new Point(3, -7);
+let pointB = new Point();
 
-describe('Place', () => {
+
+describe('Point', () => {
     
     describe('position on X axis', () => {
         it('generate x position upto X_MAX', () => {
@@ -18,5 +21,12 @@ describe('Place', () => {
             expect(point.y_position).to.equal(2);
         });
     });
+    
+    describe('calculate distance between two fixed points', () => {
+        it('returns the Manhattan distance', () => {
+            expect(Point.distance(point, pointA)).to.equal(10);
+        });
+    })
+    
     
 })
