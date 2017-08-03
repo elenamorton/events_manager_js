@@ -7,12 +7,19 @@ let point = new Point(4, 2);
 let pointA = new Point(3, -7);
 let pointB = new Point();
 
-
 describe('Point', () => {
     
     describe('position on X axis', () => {
-        it('generate x position upto X_MAX', () => {
+        it('shows x position', () => {
             expect(point.x_position).to.equal(4);
+        });
+        
+        it('generate x position upto X_MAX', () => {
+            expect(pointB.x_position).to.be.at.most(Point.X_MAX);
+        });
+                
+        it('generate x position above X_MIN', () => {
+            expect(pointB.x_position).to.be.at.least(Point.X_MIN);
         });
     });
     

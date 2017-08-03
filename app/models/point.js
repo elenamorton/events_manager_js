@@ -32,6 +32,17 @@ class Point {
     static get DISTANCE_MAX() {
         return DISTANCE_MAX;
     }
+    
+    static get X_MAX() {
+        return X_MAX;
+    }
+    
+    static get X_MIN() {
+        return X_MIN;
+    }
+    
+    
+    
 }
 
 
