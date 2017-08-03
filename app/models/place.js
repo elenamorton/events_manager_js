@@ -1,5 +1,3 @@
-"use strict";
-
 const Document = require('camo').Document;
 const X_MIN = -10;
 const X_MAX = 10;
