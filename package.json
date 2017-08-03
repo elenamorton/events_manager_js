@@ -21,6 +21,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "camo": "^0.12.3",
+    "chance": "^1.0.10",
     "express": "^4.15.3",
     "mongodb": "^2.2.30",
     "nedb": "^1.8.0",
