@@ -35,7 +35,7 @@ describe('Ticket', () => {
     });
     
     describe('user exceptions', () => {
-        it('sells more tickets than available', () => {
+        it('do not sells more tickets than available', () => {
             expect(() => ticketA.sellTicket(3)).to.throw('Only 2 tickets are available');
         });
     });
