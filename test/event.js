@@ -7,6 +7,7 @@ let event = new Event(5);
 let eventA = new Event(83);
 let eventB = new Event(345);
 let eventC = new Event(9999);
+let eventD = new Event(0);
 
 describe('Event', () => {
     
@@ -21,6 +22,14 @@ describe('Event', () => {
         
         it('gets the identifier as three digits string from three digit number', () => {
             expect(eventB.identifier).to.equal("345");
+        })
+        
+        it('gets "000" if identifier is more than three digit number', () => {
+            expect(eventC.identifier).to.equal("000");
+        })
+        
+        it('gets "000" if identifier is less than 1', () => {
+            expect(eventD.identifier).to.equal("000");
         })
         
         // it('throws error if identifier is more than three digit number', () => {

@@ -9,7 +9,7 @@ class Event {
     }
     
     formattedIdentifier (num) {
-        if (num <= 999) {
+        if (num <= 999 && num >= 1) {
             return ("00" + num).slice(-3);
         } else {
             return "000";
