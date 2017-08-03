@@ -3,7 +3,7 @@ const expect = chai.expect;
 
 //Importing our places model for the unit test
 const Event = require('../app/models/event');
-let event = new Event("005");
+let event = new Event(5);
 
 describe('Event', () => {
     
