@@ -24,8 +24,16 @@ describe('Point', () => {
     });
     
     describe('position on Y axis', () => {
-        it('generate y position upto Y_MAX', () => {
+        it('show y position', () => {
             expect(point.y_position).to.equal(2);
+        });
+                
+        it('generate y position upto Y_MAX', () => {
+            expect(pointB.y_position).to.be.at.most(Point.Y_MAX);
+        });
+                
+        it('generate y position above Y_MIN', () => {
+            expect(pointB.y_position).to.be.at.least(Point.Y_MIN);
         });
     });
     
