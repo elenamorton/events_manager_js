@@ -28,4 +28,5 @@ class Ticket {
     }
 }
 
-module.exports = Ticket
+module.exports = UserException;
+module.exports = Ticket;
