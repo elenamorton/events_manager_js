@@ -1,9 +1,6 @@
-const EVENT_DEFAULT_IDENTIFIER = 0;
+var UserException = require('../helper.js');
 
-function UserException(message) {
-    this.message = message;
-    this.name = 'UserException';
-}
+const EVENT_DEFAULT_IDENTIFIER = 0;
 
 class Event {
     constructor(identifier, ticketId) {
@@ -12,7 +9,12 @@ class Event {
     }
     
     formattedIdentifier (num) {
-        return ("00" + num).slice(-3);
+        if (num <= 999) {
+            return ("00" + num).slice(-3);
+        } else {
+            return "000";
+            //throw new UserException('Only identifier with three digits are allowed');
+        }
     }
     
 }
