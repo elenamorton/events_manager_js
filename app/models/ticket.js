@@ -28,5 +28,4 @@ class Ticket {
     }
 }
 
-module.exports = UserException;
 module.exports = Ticket;
