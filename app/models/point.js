@@ -40,7 +40,14 @@ class Point {
     static get X_MIN() {
         return X_MIN;
     }
+        
+    static get Y_MAX() {
+        return Y_MAX;
+    }
     
+    static get Y_MIN() {
+        return Y_MIN;
+    }
     
     
 }
