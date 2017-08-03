@@ -22,9 +22,9 @@ describe('Point', () => {
         });
     });
     
-    describe('calculate distance between two fixed points', () => {
-        it('returns the Manhattan distance', () => {
-            expect(Point.distance(point, pointA)).to.equal(10);
+    describe('calculate the Manhattan distance', () => {
+        it('returns the distance between two fixed points', () => {
+            expect(Point.manhattanDistance(point, pointA)).to.equal(10);
         });
     })
     

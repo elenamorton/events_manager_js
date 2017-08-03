@@ -21,7 +21,12 @@ class Point {
         return chance.integer({ min: Y_MIN, max: Y_MAX });
     }
 
-    
+    static manhattanDistance(a, b) {
+        const dx = a.x_position - b.x_position;
+        const dy = a.y_position - b.y_position;
+        
+        return dx + Math.abs(dy);
+    }
 }
 
 
