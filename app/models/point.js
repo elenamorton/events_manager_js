@@ -48,9 +48,6 @@ class Point {
     static get Y_MIN() {
         return Y_MIN;
     }
-    
-    
 }
-
 
 module.exports=Point;
