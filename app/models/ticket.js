@@ -1,18 +1,14 @@
 var UserException = require('../helper.js');
 
 const DEFAULT_CURRENCY = "USD";
-const TICKET_MIN_QUANTITY = 0;
-
-// function UserException(message) {
-//     this.message = message;
-//     this.name = 'UserException';
-// }
+const DEFAULT_PRICE = 1;
+const DEFAULT_QUANTITY = 0;
     
 class Ticket {
     
     constructor(quantity, price, currency) {
-        this.quantity = quantity;
-        this.price = price;
+        this.quantity = quantity >= 0 ? quantity : DEFAULT_QUANTITY;
+        this.price = price > 0 ? price : DEFAULT_PRICE;
         this.currency = currency || DEFAULT_CURRENCY;
     }
     

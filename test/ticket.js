@@ -5,6 +5,7 @@ const expect = chai.expect;
 const Ticket = require('../app/models/ticket');
 let ticket = new Ticket(20, 5);
 let ticketA = new Ticket(2, 25, "GBP");
+let ticketB = new Ticket(2, 0, "EUR");
 
 describe('Ticket', () => {
     
@@ -15,6 +16,10 @@ describe('Ticket', () => {
         
         it('get the ticket price value', () => {
             expect(ticket.price).to.equal(5);
+        });
+        
+        it('does allow only non-zero price', () => {
+            expect(ticketB.price).to.equal(1);
         });
         
         it('get the ticket default price currency', () => {
