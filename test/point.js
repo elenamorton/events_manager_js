@@ -26,6 +26,10 @@ describe('Point', () => {
         it('returns the distance between two fixed points', () => {
             expect(Point.manhattanDistance(point, pointA)).to.equal(10);
         });
+        
+        it('returns the distance between two points random generated', () => {
+            expect(Point.manhattanDistance(pointA, pointB)).to.be.at.most(Point.DISTANCE_MAX);
+        });
     })
     
     

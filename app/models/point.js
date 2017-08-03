@@ -2,6 +2,7 @@ const X_MIN = -10;
 const X_MAX = 10;
 const Y_MIN = -10;
 const Y_MAX = 10;
+const DISTANCE_MAX = X_MAX - X_MIN + Y_MAX - Y_MIN;
 const SEED = 1;
 
 const chance = require('chance').Chance(SEED);
@@ -26,6 +27,10 @@ class Point {
         const dy = a.y_position - b.y_position;
         
         return dx + Math.abs(dy);
+    }
+    
+    static get DISTANCE_MAX() {
+        return DISTANCE_MAX;
     }
 }
 
