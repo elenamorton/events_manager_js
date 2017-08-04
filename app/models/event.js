@@ -1,4 +1,4 @@
-var UserException = require('../helper.js');
+let UserException = require('../helper.js');
 
 const EVENT_DEFAULT_IDENTIFIER = 0;
 

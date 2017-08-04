@@ -30,6 +30,16 @@ class Venues {
         return events;
     }
     
+    getPoints() {
+        let points = [];
+        for(let point in this.items) {
+            if (this.hasVenue(point)) {
+                points.push(point);
+            }
+        }
+        return points;
+    }
+    
     hasVenue(key) {
         return this.items.hasOwnProperty(key);
     }

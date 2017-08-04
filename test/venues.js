@@ -13,7 +13,8 @@ describe('Venues', () => {
         });
         
         it('keeps unique points', () => {
-            expect(venues.items).to.include.all.keys(1, 2, 3);
+            let uniquePoints = [...new Set(venues.getPoints())];
+            expect(uniquePoints).to.have.lengthOf(3);
         });
         
         it('keeps unique events', () => {

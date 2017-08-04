@@ -1,4 +1,4 @@
-var UserException = require('../helper.js');
+let UserException = require('../helper.js');
 
 const DEFAULT_CURRENCY = "USD";
 const DEFAULT_PRICE = 1;
