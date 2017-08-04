@@ -16,7 +16,11 @@ class Venues {
     }
     
     getEventId(key) {
-        return this.items[key];
+        return this.hasVenue(key) ? this.items[key] : undefined;
+    }
+    
+    hasVenue(key) {
+        return this.items.hasOwnProperty(key);
     }
     
 }
