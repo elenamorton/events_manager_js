@@ -42,7 +42,7 @@ describe('Point', () => {
             expect(Point.manhattanDistance(point, pointA)).to.equal(10);
         });
         
-        it('returns the distance between two points random generated', () => {
+        it('returns the distance between two points, one is randomly generated', () => {
             expect(Point.manhattanDistance(pointA, pointB)).to.be.at.most(Point.DISTANCE_MAX);
         });
     })
