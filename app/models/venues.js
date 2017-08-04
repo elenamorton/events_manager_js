@@ -43,6 +43,10 @@ class Venues {
     hasVenue(key) {
         return this.items.hasOwnProperty(key);
     }
+        
+    static get MAX_VENUES() {
+        return MAX_VENUES;
+    }
     
 }
 
