@@ -8,6 +8,7 @@ class Venues {
     constructor(venuesObj) {
         this.length = 0;
         this.items = {};
+
         for (let venue in venuesObj) {
             if (venuesObj.hasOwnProperty(venue)) {
                 this.items[venue] = venuesObj[venue];
@@ -27,7 +28,13 @@ class Venues {
                 events.push(this.items[ev]);
             }
         }
-        return events;
+
+        let uniqueEvents = [...new Set(events)];
+        if (uniqueEvents.length === this.length) {
+            return events;
+        } else {
+            throw new UserException(`There are duplicated events`);
+        }
     }
     
     getPoints() {
@@ -37,7 +44,12 @@ class Venues {
                 points.push(point);
             }
         }
-        return points;
+
+        if (points.length === this.length) {
+            return points;
+        } else {
+            throw new UserException(`There are duplicated locations`);
+        }
     }
     
     hasVenue(key) {
