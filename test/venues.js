@@ -41,7 +41,7 @@ describe('Venues', () => {
         });
 
         it('removed an existing venue from the venues table', () => {
-            venuesA.removeVenue(2, 12)
+            venuesA.removeVenue(2)
             expect(venuesA).to.have.property('length', 1);
         });
 
@@ -55,6 +55,11 @@ describe('Venues', () => {
         it.skip('throws error if duplicated events', (done) => {
             expect(venuesA.getEvents).to.throw('There are duplicated events');
             done();
+        });
+
+        it('removed an non-existing venue from the venues table', () => {
+            venuesA.removeVenue(4)
+            expect(venuesA).to.have.property('length', 1);
         });
     })
 
