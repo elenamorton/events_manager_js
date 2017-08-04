@@ -23,12 +23,12 @@ describe('Venues', () => {
         });
     
         it('maximum of Venues.MAX_VENUES entries', () => {
-            expect(venues.length).to.be.at.most(Venues.MAX_VENUES)
+            expect(venues.length).to.be.at.most(Venues.MAX_VENUES);
         });
 
         it('clears the venues table', () => {
             venuesA.clearTable();
-            expect(venuesA.items).to.be.empty
+            expect(venuesA.items).to.be.empty;
         });
 
         it('adds a new venue to the venues table', () => {
@@ -41,7 +41,7 @@ describe('Venues', () => {
         });
 
         it('removed an existing venue from the venues table', () => {
-            venuesA.removeVenue(2)
+            venuesA.removeVenue(2);
             expect(venuesA).to.have.property('length', 1);
         });
 
@@ -58,9 +58,9 @@ describe('Venues', () => {
         });
 
         it('removed an non-existing venue from the venues table', () => {
-            venuesA.removeVenue(4)
+            venuesA.removeVenue(4);
             expect(venuesA).to.have.property('length', 1);
         });
-    })
+    });
 
 })
