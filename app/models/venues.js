@@ -54,10 +54,20 @@ class Venues {
     
     addVenue(pointId, eventId) {
         if (!this.hasVenue(pointId)) {
-            this.length++
+            this.length++;
         }
-        this.items[pointId] = eventId
+        this.items[pointId] = eventId;
         return this.items[pointId];
+    }
+
+    removeVenue(pointId) {
+        let current;
+        if (this.hasVenue(pointId)) {
+            current = this.items[pointId];
+            this.length--;
+            delete this.items(pointId);
+        }
+        return current;
     }
 
     hasVenue(key) {

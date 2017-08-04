@@ -40,6 +40,11 @@ describe('Venues', () => {
             expect(venuesA.addVenue(1, 23)).to.equal(23);
         });
 
+        it('removed an existing venue from the venues table', () => {
+            venuesA.removeVenue(2, 12)
+            expect(venuesA).to.have.property('length', 1);
+        });
+
     });
     
     describe('user exceptions', () => {
