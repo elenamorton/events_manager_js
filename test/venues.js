@@ -30,6 +30,16 @@ describe('Venues', () => {
             venuesA.clearTable();
             expect(venuesA.items).to.be.empty
         });
+
+        it('adds a new venue to the venues table', () => {
+            venues.addVenue(7, 46);
+            expect(venues).to.have.property('length', 4);
+        });
+
+        it('replaces an existing venue with new event', () => {
+            expect(venuesA.addVenue(1, 23)).to.equal(23);
+        });
+
     });
     
     describe('user exceptions', () => {

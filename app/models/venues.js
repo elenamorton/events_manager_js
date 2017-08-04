@@ -52,6 +52,14 @@ class Venues {
         }
     }
     
+    addVenue(pointId, eventId) {
+        if (!this.hasVenue(pointId)) {
+            this.length++
+        }
+        this.items[pointId] = eventId
+        return this.items[pointId];
+    }
+
     hasVenue(key) {
         return this.items.hasOwnProperty(key);
     }
