@@ -20,6 +20,16 @@ class Venues {
         return this.hasVenue(key) ? this.items[key] : undefined;
     }
     
+    getEvents() {
+        let events = [];
+        for(let ev in this.items) {
+            if (this.hasVenue(ev)) {
+                events.push(this.items[ev]);
+            }
+        }
+        return events;
+    }
+    
     hasVenue(key) {
         return this.items.hasOwnProperty(key);
     }
