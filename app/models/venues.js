@@ -55,6 +55,11 @@ class Venues {
     hasVenue(key) {
         return this.items.hasOwnProperty(key);
     }
+
+    clearTable() {
+        this.items = {};
+        this.length = 0;
+    }
         
     static get MAX_VENUES() {
         return MAX_VENUES;

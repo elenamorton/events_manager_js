@@ -25,6 +25,11 @@ describe('Venues', () => {
         it('maximum of Venues.MAX_VENUES entries', () => {
             expect(venues.length).to.be.at.most(Venues.MAX_VENUES)
         });
+
+        it('clears the venues table', () => {
+            venuesA.clearTable();
+            expect(venuesA.items).to.be.empty
+        });
     });
     
     describe('user exceptions', () => {
