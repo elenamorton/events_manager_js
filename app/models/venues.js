@@ -9,9 +9,10 @@ class Venues {
         this.length = 0;
         this.items = {};
         for (let venue in venuesObj) {
-            this.items[venue] = venuesObj[venue];
-            this.length++;
-
+            if (venuesObj.hasOwnProperty(venue)) {
+                this.items[venue] = venuesObj[venue];
+                this.length++;
+            }
         }
     }
     
