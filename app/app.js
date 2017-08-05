@@ -7,24 +7,36 @@ const UserException = require('./helper.js');
 const MESSAGE = 'Please enter a position (x,y) or <ctrl>D to exit:\n';
 const PROMPT = '> ';
 
-let parser = input => {
-    return input;
-}
+let parser = (input, point) => {
+    
+    input.replace(/\s+/g, ' ').trim();
+    let arr = input.split(',');
+
+    if (arr.length === 2) {    
+        point.x_position = parseInt(arr[0], 10);
+        point.y_position = parseInt(arr[1], 10);
+        return true;
+    }
+    return false;
+};
 
 let readInput = () => {
-    let positionString;
- 
+    let currentPointString;
+    let currentPoint = new Point(0,0);
+    
     process.stdin.setEncoding('utf8');
     process.stdout.write(MESSAGE);
     process.stdout.write(PROMPT);
     
     process.stdin.on('readable', () => {
 
-        positionString = process.stdin.read();
+        currentPointString = process.stdin.read();
         
-        if (positionString !== null) {
-            if (parser(positionString.trim()) !== undefined) {
-                process.stdout.write('Closest events to: (' + `${positionString.trim()}` + '\u0029\n');
+        if (currentPointString !== null) {
+            
+            if (parser(currentPointString, currentPoint)) {
+                process.stdout.write('Closest events to: (' + `${currentPoint.x_position}` + ',' + `${currentPoint.y_position}` + '\u0029\n');
+                
             }
             process.stdout.write(PROMPT);
         }
@@ -35,5 +47,6 @@ let readInput = () => {
     }); 
     return;
 }
+
 
 readInput();
