@@ -73,6 +73,14 @@ class Venues {
     hasVenue(key) {
         return this.items.hasOwnProperty(key);
     }
+    
+    eachVenue(fn) {
+        for (let pointId in this.items) {
+            if (this.hasVenue(pointId)) {
+                fn(pointId, this.items[pointId]);
+            }
+        }
+    }
 
     clearTable() {
         this.items = {};
