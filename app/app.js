@@ -4,7 +4,7 @@ const Event = require('./models/event');
 const Venues = require('./models/venues');
 const UserException = require('./helper.js');
 
-const MESSAGE = 'Please enter a position (x,y) or <ctrl>D to exit:\n';
+const MESSAGE = 'Please Input Coordinates (x,y) or <ctrl>D to exit:\n';
 const PROMPT = '> ';
 const PROXIMITY_CRITERIA = 15;
 
