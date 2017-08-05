@@ -2,14 +2,13 @@ const Point = require('./models/point');
 const Ticket = require('./models/ticket');
 const Event = require('./models/event');
 const Venues = require('./models/venues');
-
 const UserException = require('./helper.js');
+
 const MESSAGE = 'Please enter a position (x,y) or <ctrl>D to exit:\n';
 const PROMPT = '> ';
 const PROXIMITY_CRITERIA = 15;
 
 let parser = (input, point) => {
-    
     input.replace(/\s+/g, ' ').trim();
     let arr = input.split(',');
 
@@ -22,11 +21,24 @@ let parser = (input, point) => {
 };
 
 let processCurrentPoint = point => {
+    let pointsId = venuesDatabase.getPointsId();
+    let pointsList = [];
+    for (let i = 0; i < pointsId.length; i++) {
+        pointsList.push(pointsDatabase[pointsId[i]]);
+    }
     
+    process.stdout.write('points dist: ' + `${pointsId}` + '\n');
+    
+    let distanceList = [];
+    for (let i = 0; i < venuesDatabase.length; i++) {
+        distanceList.push(Point.manhattanDistance(point, pointsList[i]));
+    }
+    process.stdout.write('points dist: ' + `${distanceList}` + '\n');
+    return distanceList;
 };
 
 let printAllCloseEvents = list => {
-    
+   // while ();
 };
 
 let readInput = () => {
@@ -59,7 +71,6 @@ let readInput = () => {
 };
 
 let createPointsDatabase = db => {
-    let testPoint = new Point(4,2);
     for (let i = 0; i < 30; i++) {
         db.push(new Point());
     }
