@@ -48,8 +48,7 @@ let printAllCloseEvents = hash => {
             let pointId = hash[distance];
             let eventId = venuesDatabase.getEventId(pointId);
             let ticketId = eventsDatabase[eventId].ticketId;
-
-            process.stdout.write('Event ' + `${eventsDatabase[eventId-1].identifier}` + '-$' + `${ticketsDatabase[ticketId-1].price}` + ', Distance ' + `${distance}` + '\n');
+            process.stdout.write('Event ' + `${eventsDatabase[eventId-1].identifier}` + ' - $' + `${ticketsDatabase[ticketId-1].price.toFixed(2)}` + ', Distance ' + `${distance}` + '\n');
         }
     };
     return;
@@ -94,6 +93,8 @@ let createTicketsDatabase = db => {
     for (let i = 0; i < 10; i++) {
         db.push(new Ticket(5, 30.29));
     }
+    db[1].price = 35.20;
+    db[6].price = 1.40;
 };
 
 let createEventsDatabase = db => {
