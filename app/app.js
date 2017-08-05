@@ -6,6 +6,7 @@ const Venues = require('./models/venues');
 const UserException = require('./helper.js');
 const MESSAGE = 'Please enter a position (x,y) or <ctrl>D to exit:\n';
 const PROMPT = '> ';
+const PROXIMITY_CRITERIA = 15;
 
 let parser = (input, point) => {
     
@@ -18,6 +19,14 @@ let parser = (input, point) => {
         return true;
     }
     return false;
+};
+
+let processCurrentPoint = point => {
+    
+};
+
+let printAllCloseEvents = list => {
+    
 };
 
 let readInput = () => {
@@ -35,8 +44,9 @@ let readInput = () => {
         if (currentPointString !== null) {
             
             if (parser(currentPointString, currentPoint)) {
+                let outputList = processCurrentPoint(currentPoint);
                 process.stdout.write('Closest events to (' + `${currentPoint.x_position}` + ',' + `${currentPoint.y_position}` + '\u0029\u003a\n');
-                
+                printAllCloseEvents(outputList);
             }
             process.stdout.write(PROMPT);
         }
@@ -49,7 +59,8 @@ let readInput = () => {
 };
 
 let createPointsDatabase = db => {
-    for (let i = 0; i < Point.DISTANCE_MAX / 2; i++) {
+    let testPoint = new Point(4,2);
+    for (let i = 0; i < 30; i++) {
         db.push(new Point());
     }
 };
@@ -67,7 +78,12 @@ let createEventsDatabase = db => {
 };
 
 let createVenuesDatabase = db => {
-    db.addVenue(1, 5);
+    db.addVenue(3, 8);
+    db.addVenue(12, 4);
+    db.addVenue(17, 1);
+    db.addVenue(19, 6);
+    db.addVenue(27, 3);
+    db.addVenue(29, 2);
 };
 
 let pointsDatabase = [];
