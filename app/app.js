@@ -46,7 +46,16 @@ let readInput = () => {
         process.stdout.write('end\n');
     }); 
     return;
-}
+};
 
+let createPointsDatabase = db => {
+    for (let i = 0; i < Point.DISTANCE_MAX / 2; i++) {
+        db.push(new Point());
+    }
+};
+
+
+let pointsDatabase = [];
+createPointsDatabase(pointsDatabase);
 
 readInput();
