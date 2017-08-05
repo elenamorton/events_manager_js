@@ -11,12 +11,14 @@ let parser = input => {
 
 let readInput = () => {
     process.stdin.setEncoding('utf8');
-
+    process.stdout.write('Please enter a position:> ');
     process.stdin.on('readable', () => {
+
         let position = process.stdin.read();
         if (position !== null) {
             parser(position);
             process.stdout.write(`data: ${position}`);
+            process.stdout.write('Please enter a position:> ');
         }
     });
 
