@@ -26,7 +26,7 @@ class Point {
         const dx = a.x_position - b.x_position;
         const dy = a.y_position - b.y_position;
         
-        return dx + Math.abs(dy);
+        return Math.abs(dx) + Math.abs(dy);
     }
     
     static get DISTANCE_MAX() {
