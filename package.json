@@ -4,7 +4,7 @@
   "description": "social events manager",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node app/app.js",
     "test": "./node_modules/.bin/mocha --reporter spec",
     "test-coverage": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*"
   },
