@@ -21,7 +21,7 @@ class Venues {
         return this.hasVenue(key) ? this.items[key] : undefined;
     }
     
-    getEvents() {
+    getEventsId() {
         let events = [];
         for(let ev in this.items) {
             if (this.hasVenue(ev)) {
@@ -37,7 +37,7 @@ class Venues {
         }
     }
     
-    getPoints() {
+    getPointsId() {
         let points = [];
         for(let point in this.items) {
             if (this.hasVenue(point)) {

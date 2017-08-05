@@ -13,12 +13,12 @@ describe('Venues', () => {
         });
         
         it('unique points', () => {
-            let uniquePoints = [...new Set(venues.getPoints())];
+            let uniquePoints = [...new Set(venues.getPointsId())];
             expect(uniquePoints).to.have.lengthOf(3);
         });
         
         it('unique events', () => {
-            let uniqueEvents = [...new Set(venues.getEvents())];
+            let uniqueEvents = [...new Set(venues.getEventsId())];
             expect(uniqueEvents).to.have.lengthOf(3);
         });
     
@@ -49,7 +49,7 @@ describe('Venues', () => {
     
     describe('user exceptions', () => {
         it.skip('throws error if duplicated locations', () => {
-            expect(() => venuesA.getPoints).to.throw('There are duplicated locations');
+            expect(() => venuesA.getPointsId).to.throw('There are duplicated locations');
         });
         
         it.skip('throws error if duplicated events', (done) => {
