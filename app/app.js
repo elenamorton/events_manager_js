@@ -27,18 +27,32 @@ let processCurrentPoint = point => {
         pointsList.push(pointsDatabase[pointsId[i]]);
     }
     
-    process.stdout.write('points dist: ' + `${pointsId}` + '\n');
-    
     let distanceList = [];
     for (let i = 0; i < venuesDatabase.length; i++) {
         distanceList.push(Point.manhattanDistance(point, pointsList[i]));
     }
-    process.stdout.write('points dist: ' + `${distanceList}` + '\n');
-    return distanceList;
+    
+    let distancesWithPoints = {};
+    for (let i = 0; i < pointsId.length; i++) {
+        distancesWithPoints[distanceList[i]] = pointsId[i];
+    }
+    return distancesWithPoints;
 };
 
-let printAllCloseEvents = list => {
-   // while ();
+let printAllCloseEvents = hash => {
+    let keys = Object.keys(hash);
+    for (let i = 0; i < keys.length; i++) {
+        
+        if (keys[i] < PROXIMITY_CRITERIA) {
+            let distance = keys[i];
+            let pointId = hash[distance];
+            let eventId = venuesDatabase.getEventId(pointId);
+            let ticketId = eventsDatabase[eventId].ticketId;
+
+            process.stdout.write('Event ' + `${eventsDatabase[eventId-1].identifier}` + '-$' + `${ticketsDatabase[ticketId-1].price}` + ', Distance ' + `${distance}` + '\n');
+        }
+    };
+    return;
 };
 
 let readInput = () => {
