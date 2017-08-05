@@ -66,11 +66,18 @@ let createEventsDatabase = db => {
     }
 };
 
+let createVenuesDatabase = db => {
+    db.addVenue(1, 5);
+};
 
 let pointsDatabase = [];
 let ticketsDatabase = [];
 let eventsDatabase = [];
+let venuesDatabase = new Venues({});
+
 createPointsDatabase(pointsDatabase);
 createTicketsDatabase(ticketsDatabase);
 createEventsDatabase(eventsDatabase);
+createVenuesDatabase(venuesDatabase);
+
 readInput();
