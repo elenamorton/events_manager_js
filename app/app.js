@@ -13,8 +13,8 @@ let parser = (input, point) => {
     let arr = input.split(',');
 
     if (arr.length === 2) {    
-        point.x_position = parseInt(arr[0], 10);
-        point.y_position = parseInt(arr[1], 10);
+        point.x_position = (isNaN(parseInt(arr[0]))) ? 0 : parseInt(arr[0]) % 10;
+        point.y_position = (isNaN(parseInt(arr[1]))) ? 0 : parseInt(arr[1]) % 10;
         return true;
     }
     return false;
