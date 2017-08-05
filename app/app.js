@@ -35,7 +35,7 @@ let readInput = () => {
         if (currentPointString !== null) {
             
             if (parser(currentPointString, currentPoint)) {
-                process.stdout.write('Closest events to: (' + `${currentPoint.x_position}` + ',' + `${currentPoint.y_position}` + '\u0029\n');
+                process.stdout.write('Closest events to (' + `${currentPoint.x_position}` + ',' + `${currentPoint.y_position}` + '\u0029\u003a\n');
                 
             }
             process.stdout.write(PROMPT);
