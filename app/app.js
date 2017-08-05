@@ -54,8 +54,14 @@ let createPointsDatabase = db => {
     }
 };
 
+let createTicketsDatabase = db => {
+    for (let i = 0; i < 10; i++) {
+        db.push(new Ticket(5, 30.29));
+    }
+};
 
 let pointsDatabase = [];
+let ticketsDatabase = [];
 createPointsDatabase(pointsDatabase);
-
+createTicketsDatabase(ticketsDatabase);
 readInput();
