@@ -13,8 +13,8 @@ let parser = (input, point) => {
     let arr = input.split(',');
 
     if (arr.length === 2) {    
-        point.x_position = (isNaN(parseInt(arr[0]))) ? 0 : parseInt(arr[0]) % 10;
-        point.y_position = (isNaN(parseInt(arr[1]))) ? 0 : parseInt(arr[1]) % 10;
+        point.x_position = (isNaN(parseInt(arr[0], 10))) ? 0 : parseInt(arr[0], 10) % 10;
+        point.y_position = (isNaN(parseInt(arr[1], 10))) ? 0 : parseInt(arr[1], 10) % 10;
         return true;
     }
     return false;
@@ -52,7 +52,7 @@ let printAllCloseEvents = hash => {
             price = (price - 10 >= 0) ? price : ("0" + price).slice(-5);
             process.stdout.write('Event ' + `${eventsDatabase[eventId-1].identifier}` + ' - $' + `${price}` + ', Distance ' + `${distance}` + '\n');
         }
-    };
+    }
     return;
 };
 
