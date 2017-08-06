@@ -2,9 +2,13 @@
 [![CodeClimate](https://codeclimate.com/github/elenamorton/events_manager_js/badges/gpa.svg)](https://codeclimate.com/github/elenamorton/events_manager_js)
 [![Test Coverage](https://codeclimate.com/github/elenamorton/events_manager_js/badges/coverage.svg)](https://codeclimate.com/github/elenamorton/events_manager_js/coverage)
 
-# Database server tech test
+# Events manager tech test
 
 ## Instructions
+
+npm install
+npm test
+npm start
 
 
 
