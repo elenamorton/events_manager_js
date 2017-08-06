@@ -7,6 +7,7 @@ const UserException = require('./helper.js');
 const MESSAGE = 'Please Input Coordinates (x,y) or <ctrl>D to exit:\n';
 const PROMPT = '> ';
 const PROXIMITY_CRITERIA = 15;
+const NUMBER_OF_CLOSEST_EVENTS = 5;
 
 let parser = (input, point) => {
     input.replace(/\s+/g, ' ').trim();
@@ -41,7 +42,8 @@ let processCurrentPoint = point => {
 
 let printAllCloseEvents = hash => {
     let keys = Object.keys(hash);
-    for (let i = 0; i < keys.length; i++) {
+    let numberEvents = (keys.length < NUMBER_OF_CLOSEST_EVENTS) ? keys.length : NUMBER_OF_CLOSEST_EVENTS;
+    for (let i = 0; i <numberEvents; i++) {
         
         if (keys[i] < PROXIMITY_CRITERIA) {
             let distance = keys[i];
