@@ -4,13 +4,21 @@
 
 # Events manager tech test
 
-## Instructions
-
-npm install
-npm test
-npm start
-
-
+## Usage Instructions
+* clone the repo and install Node.js modules
+```shell
+$ git clone https://github.com/elenamorton/events_manager_js.git
+$ cd events_manager_js
+$ npm install
+```
+* run tests
+```shell
+$ npm test
+```
+* start up the CLI application
+```shell
+$ npm start
+```
 
 ### Used Technologies
 * Vanilla JavaScript ES6
@@ -19,7 +27,7 @@ npm start
 * Test coverage using Istanbul(v0.4.5)
 * Seeded randomizer using Chance(v1.0.10)
 
-### Requirements
+### Specification
 
 ## Application design
 
