@@ -15,7 +15,7 @@ $ npm install
 ```shell
 $ npm test
 ```
-* start up the CLI application
+* start up the CLI Node application
 ```shell
 $ npm start
 ```
@@ -27,15 +27,43 @@ $ npm start
 * Test coverage using Istanbul(v0.4.5)
 * Seeded randomizer using Chance(v1.0.10)
 
-### Specification
+### Requirements
 
-## Application design
+Write a program which accepts a user location as a pair of coordinates, and returns a list of the five closest events, along with the cheapest ticket price for each event.
+
+#### Headline specifications
+
+ * The program should randomly generate seed data
+ * Program should operate in a world that ranges from -10 to +10 (Y axis), and -10 to +10 (X axis). 
+ * Each co-ordinate can hold a maximum of one event
+ * Each event has a unique numeric identifier (e.g. 1, 2, 3)
+ * Each event has zero or more tickets
+ * Each ticket has a non-zero price, expressed in US Dollars
+ * The distance between two points should be computed as the Manhattan distance
+
+## Program design
 
 ### Assumptions
+
 
 ### Implementation
 
 ### Results
+
+```shell
+$ npm start
+
+> event_manager@0.1.0 start /home/ubuntu/workspace
+> node app/app.js
+
+Please enter a position (x,y) or <ctrl>D to exit:
+> 4,2
+Closest events to (4,2):
+Event 003 - $30.29, Distance 3
+Event 001 - $35.20, Distance 5
+Event 006 - $01.40, Distance 12
+> end
+```
 
 ## Future extensions
 
