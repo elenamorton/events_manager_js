@@ -51,8 +51,6 @@ Write a program which accepts a user location as a pair of coordinates, and retu
 
 ### Implementation
 
-#### Design decisions
-
  * Each point contains a X-coordinate, and a Y-coordinate;
  * The pointsDatabase is an array of points. A pointID is the index in this array;
  * Only 30 points are randomly generated in order to cover the required 3, 5, and 12 distances; 
@@ -69,7 +67,7 @@ Write a program which accepts a user location as a pair of coordinates, and retu
    - 6 venues
 
 #### Data structures diagram
-
+![Data Structures Diagram](data_structures.png)
 
 ### Results
 
