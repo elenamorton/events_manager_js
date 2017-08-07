@@ -100,6 +100,12 @@ to allow the multiple locations to be added for an event. The length of the arra
 - A better implementation, would be to change the arrays/hashes implementation to a lightweight database like nedb, and add camo as a data mapper to get the models mapped to database collections.
 With this aproach, we only need to add a 'belongs to'-like colomn in the Event model, to contain the pointID from the Points collection. 
 
-
++------+--------------+----------+---------+
+| EvID | EvIdentifier | TicketID | PointID |
++------+--------------+----------+---------+
+| 2378 |  001         |    8     | 1000    |
++------+--------------+----------+---------+
+| 2379 |  005         |    6     | 1000    |
++------+--------------+----------+---------+
 
 ### How would you change your program if you were working with a much larger world size?
