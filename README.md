@@ -92,11 +92,14 @@ Event 006 - $01.40, Distance 12
  - [x] Memory implementation of point, ticket, event, venue collections
  - [ ] Adding nedb lightweight JavaScript database
 
-## Future developemnt
+## Questions
 
 ### How might you change your program if you needed to support multiple events at the same location?
+- Under current implementation, a simple way is to expand the Venue hash value from a pointID, to an array of pointIDs, 
+to allow the multiple locations to be added for an event. The length of the array will give the number of events hold at that location (point);
+- A better implementation, would be to change the arrays/hashes implementation to a lightweight database like nedb, and add camo as a data mapper to get the models mapped to database collections.
+With this aproach, we only need to add a 'belongs to'-like colomn in the Event model, to contain the pointID from the Points collection. 
+
 
 
 ### How would you change your program if you were working with a much larger world size?
-
-### Conclusions
