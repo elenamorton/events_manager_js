@@ -100,12 +100,13 @@ to allow the multiple locations to be added for an event. The length of the arra
 - A better implementation, would be to change the arrays/hashes implementation to a lightweight database like nedb, and add camo as a data mapper to get the models mapped to database collections.
 With this aproach, we only need to add a 'belongs to'-like colomn in the Event model, to contain the pointID from the Points collection. 
 
-+------+--------------+----------+---------+
-| EvID | EvIdentifier | TicketID | PointID |
-+------+--------------+----------+---------+
-| 2378 |  001         |    8     | 1000    |
-+------+--------------+----------+---------+
-| 2379 |  005         |    6     | 1000    |
-+------+--------------+----------+---------+
+![Multiple Events](multiple_events.png)
 
 ### How would you change your program if you were working with a much larger world size?
+I would think of several changes that are needed in order to support larger data storage, fast queries, optimisations to avoid often database access.
+- Change all data storage from current arrays/hash to a database like MongoDB, to accommodate a larger data collections to be stored in a persistent environment;
+- Adding an algorithm to optimize the search times. I would make a list of the 'Five hotest events', and keep it into the memory. This will avoid accessing the database for every query, making the application faster. 
+- Replace the simplistic 'proximity' algorithm to a more comprehensive one to take into account serveral criteria. 
+  - If two locations have the same Manhattan distance to the reference point, and not both will fit into the 'Five closest', I would consider 'time of travel' for instance, and choose the quickest one into the list. 
+  - Expand the input to add 'number of tickets'. If not all of the 'Five closest' events hold the required number of tickets, I would discad them from the list, and search for others further distance, that have the number of tickets required;
+  - Maybe, take into account desired facilities at the venue. Venues not meeting the requests will be discarded from the 'Five closest' list. 
