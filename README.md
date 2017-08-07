@@ -23,8 +23,8 @@ $ npm start
 ### Used Technologies
 * Vanilla JavaScript ES6
 * NodeJS v8.2.1
+* Npm v5.3.0
 * Test suite based on Mocha(v3.5.0), Chai(v4.1.0)
-* Test coverage using Istanbul(v0.4.5)
 * Seeded randomizer using Chance(v1.0.10)
 
 ### Requirements
@@ -46,17 +46,30 @@ Write a program which accepts a user location as a pair of coordinates, and retu
 ### Assumptions
  * The user is not introducing a reference position out of the [-10..10] range on any of X and Y axis;
  * The 'proximity' algoritm that determins the closest points to the reference one is set as less 15, as a Manhattan distance to the other points;
- * There cannot be duplicated events in the venues hash, or duplicated points;
+ * There cannot be duplicated events in the venues hash, or duplicated locations;
 
 
 ### Implementation
 
+#### Design decisions
+
  * Each point contains a X-coordinate, and a Y-coordinate;
- * Only 30 points out of maximum 41 are randomly generated in order to cover the required 3, 5, and 12 distances; 
+ * The pointsDatabase is an array of points. A pointID is the index in this array;
+ * Only 30 points are randomly generated in order to cover the required 3, 5, and 12 distances; 
  * Each ticket contains the number of tickets available, a price (default is 1), and a currency (default is USD);
+ * The ticketsDatabase is an array of tickets. A ticketID is the index in this array;
  * Each event contains an identifier (between 0 and 999), and a ticketID;
- * Each venue contains an eventID and a pointID;
- * The available venues have been added to a venues hash, currently made up of 6 venues. Maximum venues in the list can be same as maximum number of points (41);
+ * The eventsDatabase is an array of events. A eventID is the index in this array;
+ * Each venue is made up of a hash with the eventID, as key, and a pointID, as value;
+ * The venuesDatabase is an object containing the number of venues (as the object length), and hash with available venues;
+ * Current implementation contains:  
+ - 30 locations (points),
+ - 10 tickets types,
+ - 10 events, and
+ - 6 venues
+
+#### Data structures diagram
+
 
 ### Results
 
@@ -74,10 +87,15 @@ Event 001 - $35.20, Distance 5
 Event 006 - $01.40, Distance 12
 > end
 ```
+### Task list for the data collections
+
+- [x] Memory implementation of point, ticket, event, venue collections
+- [] Adding nedb lightweight JavaScript database
 
 ## Future developemnt
 
-### How might you change your program if you needed to support multiple events at the same location? 
+### How might you change your program if you needed to support multiple events at the same location?
+
 
 ### How would you change your program if you were working with a much larger world size?
 
