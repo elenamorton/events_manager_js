@@ -45,7 +45,7 @@ Write a program which accepts a user location as a pair of coordinates, and retu
 
 ### Assumptions
  * The user is not introducing a reference position out of the [-10..10] range on any of X and Y axis;
- * The 'proximity' algoritm that determins the closest points to the reference one is set as less 15, as a Manhattan distance to the other points;
+ * The 'proximity' algoritm that determins the closest points to the reference location is set as 'less than 15', as a Manhattan distance to the other points;
  * There cannot be duplicated events in the venues hash, or duplicated locations;
 
 
