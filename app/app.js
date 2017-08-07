@@ -21,15 +21,15 @@ let parser = (input, point) => {
     return false;
 };
 
-let processCurrentPoint = point => {
-    let pointsId = venuesDatabase.getPointsId();
+let processCurrentPoint = (point, venuesDb, pointsDb) => {
+    let pointsId = venuesDb.getPointsId();
     let pointsList = [];
     for (let i = 0; i < pointsId.length; i++) {
-        pointsList.push(pointsDatabase[pointsId[i]]);
+        pointsList.push(pointsDb[pointsId[i]]);
     }
     
     let distanceList = [];
-    for (let i = 0; i < venuesDatabase.length; i++) {
+    for (let i = 0; i < venuesDb.length; i++) {
         distanceList.push(Point.manhattanDistance(point, pointsList[i]));
     }
     
@@ -73,7 +73,7 @@ let readInput = () => {
         if (currentPointString !== null) {
             
             if (parser(currentPointString, currentPoint)) {
-                let proximityList = processCurrentPoint(currentPoint);
+                let proximityList = processCurrentPoint(currentPoint, venuesDatabase, pointsDatabase);
                 process.stdout.write('Closest events to (' + `${currentPoint.x_position}` + ',' + `${currentPoint.y_position}` + '\u0029\u003a\n');
                 printAllCloseEvents(proximityList);
             }
