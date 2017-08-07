@@ -128,7 +128,7 @@ createVenuesDatabase(venuesDatabase);
 
 readInput();
 
-module.exports.createPointsDatabase = createEventsDatabase;
+module.exports.createPointsDatabase = createPointsDatabase;
 module.exports.createTicketsDatabase = createTicketsDatabase;
 module.exports.createEventsDatabase = createEventsDatabase;
 module.exports.createVenuesDatabase = createVenuesDatabase;
