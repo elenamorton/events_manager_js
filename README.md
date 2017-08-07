@@ -63,10 +63,10 @@ Write a program which accepts a user location as a pair of coordinates, and retu
  * Each venue is made up of a hash with the eventID, as key, and a pointID, as value;
  * The venuesDatabase is an object containing the number of venues (as the object length), and hash with available venues;
  * Current implementation contains:  
- - 30 locations (points),
- - 10 tickets types,
- - 10 events, and
- - 6 venues
+   - 30 locations (points),
+   - 10 tickets types,
+   - 10 events, and
+   - 6 venues
 
 #### Data structures diagram
 
@@ -89,8 +89,8 @@ Event 006 - $01.40, Distance 12
 ```
 ### Task list for the data collections
 
-- [x] Memory implementation of point, ticket, event, venue collections
-- [] Adding nedb lightweight JavaScript database
+ - [x] Memory implementation of point, ticket, event, venue collections
+ - [] Adding nedb lightweight JavaScript database
 
 ## Future developemnt
 
