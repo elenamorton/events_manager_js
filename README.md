@@ -90,7 +90,7 @@ Event 006 - $01.40, Distance 12
 ### Task list for the data collections
 
  - [x] Memory implementation of point, ticket, event, venue collections
- - [] Adding nedb lightweight JavaScript database
+ - [ ] Adding nedb lightweight JavaScript database
 
 ## Future developemnt
 
